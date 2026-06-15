@@ -3,14 +3,14 @@ import { StrictMode } from 'react';
 
 import './index.css';
 
-import Router from '@/app/router/Router.tsx';
+import DemoPage from '@/pages/DemoPage.tsx';
 
 const root = document.getElementById('root');
 
 if (root !== null) {
   createRoot(root).render(
     <StrictMode>
-      <Router />
+      <DemoPage />
     </StrictMode>,
   );
 }
