@@ -24115,8 +24115,8 @@ void main(void)\r
         children: !1,
         baseTexture: !0
     }, ud.defaultMaxWidth = 2024, ud.defaultMaxHeight = 2024, ud.defaultAutoResolution = !0;
-    var dd = `modulepreload`, fd = function(e) {
-        return `/` + e;
+    var dd = `modulepreload`, fd = function(e, t) {
+        return new URL(e, t).href;
     }, pd = {}, md = function(e, t, n) {
         let r = Promise.resolve();
         if (t && t.length > 0) {
@@ -24167,7 +24167,7 @@ void main(void)\r
                     return {
                         createRequire: e
                     };
-                }, void 0);
+                }, void 0, import.meta.url);
                 var d = e(import.meta.url);
             }
             var f = `./this.program`, p = (e, t)=>{
@@ -24242,7 +24242,7 @@ void main(void)\r
             }
             var oe;
             function se() {
-                return r.locateFile ? h(`skia_pdf.wasm`) : new URL(`/assets/skia_pdf-9nU2bIC8.wasm`, `` + import.meta.url).href;
+                return r.locateFile ? h(`skia_pdf.wasm`) : new URL(`` + new URL(`skia_pdf-9nU2bIC8.wasm`, import.meta.url).href, `` + import.meta.url).href;
             }
             function ce(e) {
                 if (e == oe && S) return new Uint8Array(S);
@@ -26556,7 +26556,7 @@ return ret;
             }
             return mr(), pr(), n = o, n;
         };
-    })(), gd = `/assets/skia_pdf-9nU2bIC8.wasm`, _d = null;
+    })(), gd = `` + new URL(`skia_pdf-9nU2bIC8.wasm`, import.meta.url).href, _d = null;
     async function vd() {
         return _d || (_d = await hd({
             locateFile: (e)=>e.endsWith(`.wasm`) ? gd : e
@@ -31746,7 +31746,7 @@ return ret;
         });
     })();
     typeof exports == `object` && typeof module == `object` ? (module.exports = $d, module.exports.default = $d) : typeof define == `function` && define.amd && define([], ()=>$d);
-    var ef = `/assets/canvaskit-DB1zH3nD.wasm`, tf = null;
+    var ef = `` + new URL(`canvaskit-DB1zH3nD.wasm`, import.meta.url).href, tf = null;
     function nf() {
         return tf ||= $d({
             locateFile: ()=>ef
@@ -34252,7 +34252,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e === `/` ? `*` :
             let n = await md(()=>import(e.module).then(async (m)=>{
                     await m.__tla;
                     return m;
-                }), []);
+                }), [], import.meta.url);
             return t[e.id] = n, n;
         } catch (t) {
             return console.error(`Error loading route module \`${e.module}\`, reloading page...`), console.error(t), window.__reactRouterContext && window.__reactRouterContext.isSpaMode, window.location.reload(), new Promise(()=>{});

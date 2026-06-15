@@ -17,15 +17,14 @@ function canvasKitPlugin(): PluginOption {
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './',
   build: {
     target: 'esnext',
   },
   plugins: [
     react(),
     wasm(),
-    topLevelAwait({
-      // include: [/\/src\//],
-    }),
+    topLevelAwait(),
     canvasKitPlugin(), //skia для export default
   ],
   resolve: {
